@@ -8,17 +8,25 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #how I determined the package manager
 
   if command -v pacaur > /dev/null;	then
-	PACKAGE=`which pacaur`
+	PACKAGE=$DIR/handlers/pacaur.handler/
 elif command -v yaourt > /dev/null;	then
-	PACKAGE=`which yaourt`
+	PACKAGE=$DIR/handlers/yaourt.handler/
 elif command -v pacman > /dev/null;	then
-	PACKAGE=`which pacman`
+	PACKAGE=$DIR/handlers/pacman.handler/
 elif command -v eopkg > /dev/null;	then
-	PACKAGE=`which eopkg`
+	PACKAGE=$DIR/handlers/eopkg.handler/
 else
 	echo TODO
+	echo Submit a pull request on Git and I\'ll merge it.
 	exit 1
   fi
 
-echo $DIR
-echo $PACKAGE
+OPERATION=$1
+ARGS=${@:2}
+
+echo Operation:		$OPERATION
+echo Arguments:		$ARGS
+echo unipkg directory:	$DIR
+echo Handling op with:	$PACKAGE
+
+$DIR/transactions-operations.handler.sh $PACKAGE $OPERATION.handler.sh $ARGS
