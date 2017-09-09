@@ -30,6 +30,8 @@ case $1 in
 		$DIR/repo-operations/update.repohandler.sh
 		;;
 	*)
-		echo Not a valid repo operation!
+		echo
+		cat $DIR/../../asciiart/op-not-supported.asciiart.txt
+		echo
 		exit 1
 esac

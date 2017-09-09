@@ -9,3 +9,4 @@ repo.handler.sh		-	perform repository operations
 	repo remove	-	remove a repository
 	repo update	-	update the repository database
 search.handler.sh
+update.handler.sh
