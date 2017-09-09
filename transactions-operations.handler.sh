@@ -9,6 +9,19 @@ PACKAGE=$1
 OPERATION=$2
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cat $DIR/OPERATIONS | grep -ie $OPERATION || (echo; cat $DIR/asciiart/op-not-supported.asciiart.txt; echo; exit 127)
+echo Transaction-Operation Handler is now taking over
 
-$PACKAGE$OPERATION ${@:3} || echo Something went wrong, try manually installing with $PACKAGE
+echo Using:		$PACKAGE
+echo Trying to call:	$OPERATION
+echo unipkg Directory:	$DIR
+
+grep $DIR/OPERATIONS -ie $OPERATION > /dev/null; if [ $? -eq 0 ]; then
+	echo Successfully called $OPERATION
+	echo Starting operation-specific transaction script
+	$PACKAGE$OPERATION ${@:3}
+else
+	echo
+	cat $DIR/asciiart/op-not-supported.asciiart.txt
+	echo
+	exit 127
+fi

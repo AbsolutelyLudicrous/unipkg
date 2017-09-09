@@ -1,6 +1,8 @@
 #!/bin/bash
 #calls all other scripts
 
+echo unipkg Master Call Script is now initializing.
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . $DIR/trycatch.sh	#https://stackoverflow.com/a/25180186
 
@@ -28,5 +30,7 @@ echo Operation:		$OPERATION
 echo Arguments:		$ARGS
 echo unipkg directory:	$DIR
 echo Handling op with:	$PACKAGE
+
+echo Starting Transaction-Operation Handler
 
 $DIR/transactions-operations.handler.sh $PACKAGE $OPERATION.handler.sh $ARGS

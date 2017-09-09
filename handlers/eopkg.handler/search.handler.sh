@@ -1,6 +1,5 @@
 #/bin/bash
-echo Installing packages:
+echo Querying package database with following terms:
 echo $@
-echo Authentication required
 echo System package manager taking over, unipkg\'s job is done.
-sudo eopkg install $@
+eopkg search $@

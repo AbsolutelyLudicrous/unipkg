@@ -1,2 +1,11 @@
-INSTALL
-REMOVE
+install.handler.sh	-	install a package
+remove.handler.sh	-	remove a package
+repo.handler.sh		-	perform repository operations
+	repo add	-	add a repository
+	repo disable	-	disable a repository
+	repo enable	-	enable a repository
+	repo list	-	list repositorys
+	repo rebuild	-	rebuild repository databases
+	repo remove	-	remove a repository
+	repo update	-	update the repository database
+search.handler.sh
