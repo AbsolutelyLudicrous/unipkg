@@ -1,5 +1,5 @@
 #/bin/bash
-echo Force-updating packages:
+echo Force-reinstalling packages:
 echo $@
 echo Authentication required
 echo System package manager taking over, unipkg\'s job is done.

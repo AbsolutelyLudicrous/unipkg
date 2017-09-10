@@ -8,5 +8,12 @@ repo.handler.sh		-	perform repository operations
 	repo rebuild	-	rebuild repository databases
 	repo remove	-	remove a repository
 	repo update	-	update the repository database
-search.handler.sh
-update.handler.sh
+search.handler.sh	-	search for a package
+reinstall.handler.sh	-	force-reinstall a package
+upgrade.handler.sh	-	perform a full system upgrade
+history.handler.sh	-	show package management history in less
+list.handler.sh		-	perform list operations
+	list itable	-	list installable in pager
+	list ited	-	list installed in pager
+	list new	-	list new packages in pager
+	list upable	-	list upgradeable in pager
